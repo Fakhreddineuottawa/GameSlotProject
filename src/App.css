@@ -1,38 +1,334 @@
-.App {
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #20232a;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.header-left ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-left ul li {
+  margin: 0;
+}
+
+.header-left ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.header-left ul li a:hover {
+  text-decoration: underline;
+}
+
+.header-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-right a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background: url('/Users/User/Desktop/gameslot/public/hero-image.jpg') no-repeat center center;
+  background-size: cover;
+  height: 300px; /* Adjust the height to your desired value */
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Add to Cart Button */
+.game-card button {
+  background-color: #20232a;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.game-card button:hover {
+  background-color: #3c3f41;
+  transform: scale(1.05);
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-bar input {
+  padding: 0.75rem;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-bar select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Error Message */
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Carousel Container */
+.slick-slider {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%; /* Make the slider take the full width */
+}
+
+.slick-list {
+  padding: 0;
+  margin: 0;
+}
+
+.slick-slide {
+  padding: 0 10px; /* Add padding between slides */
+  box-sizing: border-box;
+}
+
+/* Game Cards */
+.game-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  min-height: 400px;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+  max-width: 100%;
+  height: 200px; /* Fixed height */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.game-card h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.game-card h2 a {
+  color: #20232a; /* Change link color here */
+  text-decoration: none;
+}
+
+.game-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.game-card p {
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff6f00;
+  margin: 0.5rem 0;
+}
+
+/* Checkout Styles */
+.checkout-step {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-step h2 {
+  color: #20232a;
+}
+
+.checkout-step p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.checkout-step input {
+  padding: 0.75rem;
+  width: calc(25% - 1rem);
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkout-step button {
+  background-color: #20232a;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.checkout-step button:hover {
+  background-color: #3c3f41;
+  transform: scale(1.05);
+}
+
+/* Sign Up and Login Form Styles */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+form input {
+  width: calc(100% - 1rem);
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #20232a;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3c3f41;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #20232a;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* New styles for the "Proceed to Checkout" button */
+.proceed-to-checkout {
+  background-color: #28a745; /* Green background */
   color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.proceed-to-checkout:hover {
+  background-color: #218838;
+  transform: scale(1.05);
 }
